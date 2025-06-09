@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header with icon -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚡ Electricity Bill Calculator ⚡"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Month Label with Icon -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Month"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinnerMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Electricity Usage Label -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_compass"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electricity Usage (kWh)"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextUnit"
+            android:inputType="number"
+            android:hint="e.g. 467"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Rebate Label -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_manage"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rebate (%)"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextRebate"
+            android:inputType="numberDecimal"
+            android:hint="e.g. (0% - 5%)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Calculate button -->
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:text="Calculate"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Total Charges -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_info_details"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textViewTotalCharges"
+                android:text="Total Charges: -"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Final Cost -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_agenda"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textViewFinalCost"
+                android:text="Final Cost: -"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Save to database -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:text="Save to Database"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Clear database -->
+        <Button
+            android:id="@+id/buttonClearAll"
+            android:text="Clear All Records"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- History with icon -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:src="@android:drawable/ic_menu_recent_history"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#1565C0"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly Bill History:"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <!-- ListView -->
+        <ListView
+            android:id="@+id/listViewHistory"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="12dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
+
+        <!-- About button -->
+        <Button
+            android:id="@+id/buttonAbout"
+            android:text="About This App"
+            android:backgroundTint="#9C27B0"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Profile Photo -->
+        <ImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/syahirah_photo"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Profile photo of Syahirah Nabihah" />
+
+        <!-- Student Info -->
+        <TextView
+            android:text="📘 Student Information"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:text="Name: Syahirah Nabihah Binti Muhammad Soekarno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewMatric"
+            android:text="Matric No: 2023103611"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewCourse"
+            android:text="Course: ICT602 - Mobile Technology and Development"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewCopyright"
+            android:text="Developed by Syahirah © 2025. All rights reserved."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <!-- GitHub Button -->
+        <Button
+            android:id="@+id/buttonGitHub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visit GitHub Repository"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>
