@@ -17,7 +17,8 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about); // No setTitle()
+        setContentView(R.layout.activity_about);
+        setTitle("About");
 
         imageProfile = findViewById(R.id.imageProfile);
         textName = findViewById(R.id.textViewName);
@@ -26,7 +27,7 @@ public class AboutActivity extends AppCompatActivity {
         textCopyright = findViewById(R.id.textViewCopyright);
         buttonGitHub = findViewById(R.id.buttonGitHub);
 
-        imageProfile.setImageResource(R.drawable.syahirah_photo);
+        imageProfile.setImageResource(R.drawable.syahirah_photo); // Pastikan image ini wujud di drawable
 
         buttonGitHub.setOnClickListener(v -> {
             String url = "https://github.com/syahirahnabihah/electricity-bill-app";

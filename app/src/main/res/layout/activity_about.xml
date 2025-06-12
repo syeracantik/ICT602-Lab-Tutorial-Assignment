@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Profile Photo -->
+        <!-- Profile Image -->
         <ImageView
             android:id="@+id/imageProfile"
             android:layout_width="150dp"
@@ -17,9 +17,9 @@
             android:src="@drawable/syahirah_photo"
             android:scaleType="centerCrop"
             android:layout_marginBottom="16dp"
-            android:contentDescription="Profile photo of Syahirah Nabihah" />
+            android:contentDescription="Profile photo" />
 
-        <!-- Student Info -->
+        <!-- Info Title -->
         <TextView
             android:text="📘 Student Information"
             android:textStyle="bold"
@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Student Info -->
         <TextView
             android:id="@+id/textViewName"
             android:text="Name: Syahirah Nabihah Binti Muhammad Soekarno"
