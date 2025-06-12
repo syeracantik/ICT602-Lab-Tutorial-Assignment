@@ -1,67 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
-        android:padding="24dp"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Header with icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⚡🔌 BILL DETAILS"
+            android:text="⚡🔌 INFORMATION DETAIL "
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="22sp"
             android:textColor="#1565C0"
             android:layout_marginBottom="24dp" />
 
-        <!-- MONTH -->
-        <TextView
-            android:id="@+id/textViewMonth"
-            android:text="Month: -"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#D32F2F"
-            android:layout_marginBottom="12dp" />
+        <!-- Month -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
 
-        <!-- UNIT -->
-        <TextView
-            android:id="@+id/textViewUnit"
-            android:text="Units Used: -"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#1976D2"
-            android:layout_marginBottom="12dp" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_today"
+                android:contentDescription="Month Icon"
+                android:tint="#D32F2F" />
 
-        <!-- TOTAL CHARGES -->
-        <TextView
-            android:id="@+id/textViewTotal"
-            android:text="Total Charges: -"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#388E3C"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/textViewMonthLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MONTH: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:layout_marginStart="8dp" />
 
-        <!-- REBATE -->
-        <TextView
-            android:id="@+id/textViewRebate"
-            android:text="Rebate: -"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FBC02D"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/textViewMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="18sp"
+                android:textColor="#000000" />
 
-        <!-- FINAL COST -->
-        <TextView
-            android:id="@+id/textViewFinal"
-            android:text="Final Cost: -"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#7B1FA2"
-            android:layout_marginBottom="12dp" />
+        </LinearLayout>
+
+        <!-- Units Used -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_compass"
+                android:contentDescription="Unit Icon"
+                android:tint="#1976D2" />
+
+            <TextView
+                android:id="@+id/textViewUnitLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UNITS USED: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1976D2"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/textViewUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <!-- Total Charge -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_info_details"
+                android:contentDescription="Total Charge Icon"
+                android:tint="#388E3C" />
+
+            <TextView
+                android:id="@+id/textViewTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOTAL CHARGE: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#388E3C"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <!-- Rebate -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:contentDescription="Rebate Icon"
+                android:tint="#FBC02D" />
+
+            <TextView
+                android:id="@+id/textViewRebateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REBATE: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FBC02D"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/textViewRebate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <!-- Final Cost -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_save"
+                android:contentDescription="Final Cost Icon"
+                android:tint="#7B1FA2" />
+
+            <TextView
+                android:id="@+id/textViewFinalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FINAL COST: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#7B1FA2"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/textViewFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
