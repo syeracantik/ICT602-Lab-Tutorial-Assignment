@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Month -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -54,7 +53,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp" />
 
-            <!-- Usage -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
