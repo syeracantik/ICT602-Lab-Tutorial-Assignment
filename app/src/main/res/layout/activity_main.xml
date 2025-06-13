@@ -1,163 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
+    <!-- 🔹 Top Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1565C0"
+        android:titleTextColor="@android:color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-        <!-- Header -->
-        <TextView
+    <!-- 🔹 Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⚡ Electricity Bill Calculator ⚡"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="#1565C0"
-            android:layout_marginBottom="24dp" />
+            android:layout_height="wrap_content">
 
-        <!-- Month Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Month"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_marginBottom="4dp" />
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚡ Electricity Bill Calculator ⚡"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#1565C0"
+                android:layout_marginBottom="24dp" />
 
-        <Spinner
-            android:id="@+id/spinnerMonth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            <!-- Month -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
 
-        <!-- Electricity Usage -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Electricity Usage (kWh)"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_marginBottom="4dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="#1565C0"
+                    android:layout_marginEnd="8dp" />
 
-        <EditText
-            android:id="@+id/editTextUnit"
-            android:inputType="number"
-            android:hint="e.g. 467"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Month"
+                    android:textStyle="bold"
+                    android:textColor="#212121" />
+            </LinearLayout>
 
-        <!-- Rebate Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rebate (%)"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            android:layout_marginBottom="4dp" />
+            <Spinner
+                android:id="@+id/spinnerMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" />
 
-        <!-- Rebate Radio Buttons -->
-        <RadioGroup
-            android:id="@+id/radioGroupRebate"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
+            <!-- Usage -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
 
-            <RadioButton android:id="@+id/radio0" android:text="0%" />
-            <RadioButton android:id="@+id/radio1" android:text="1%" />
-            <RadioButton android:id="@+id/radio2" android:text="2%" />
-            <RadioButton android:id="@+id/radio3" android:text="3%" />
-            <RadioButton android:id="@+id/radio4" android:text="4%" />
-            <RadioButton android:id="@+id/radio5" android:text="5%" />
-        </RadioGroup>
+                <ImageView
+                    android:src="@android:drawable/ic_menu_compass"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="#1565C0"
+                    android:layout_marginEnd="8dp" />
 
-        <!-- Calculate Button -->
-        <Button
-            android:id="@+id/buttonCalculate"
-            android:text="Calculate"
-            android:backgroundTint="#2196F3"
-            android:textColor="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electricity Usage (kWh)"
+                    android:textStyle="bold"
+                    android:textColor="#212121" />
+            </LinearLayout>
 
-        <!-- Total Charges -->
-        <TextView
-            android:id="@+id/textViewTotalCharges"
-            android:text="Total Charges: -"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#212121"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            <EditText
+                android:id="@+id/editTextUnit"
+                android:inputType="number"
+                android:hint="e.g. 467"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" />
 
-        <!-- Final Cost -->
-        <TextView
-            android:id="@+id/textViewFinalCost"
-            android:text="Final Cost: -"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#212121"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="4dp" />
+            <!-- Rebate -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
 
-        <!-- Save to database -->
-        <Button
-            android:id="@+id/buttonSave"
-            android:text="Save to Database"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp" />
+                <ImageView
+                    android:src="@android:drawable/ic_menu_manage"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="#1565C0"
+                    android:layout_marginEnd="8dp" />
 
-        <!-- Clear database -->
-        <Button
-            android:id="@+id/buttonClearAll"
-            android:text="Clear All Records"
-            android:backgroundTint="#F44336"
-            android:textColor="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rebate (%)"
+                    android:textStyle="bold"
+                    android:textColor="#212121" />
+            </LinearLayout>
 
-        <!-- History Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Monthly Bill History:"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#212121"
-            android:layout_marginBottom="8dp" />
+            <RadioGroup
+                android:id="@+id/radioGroupRebate"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
 
-        <!-- ListView -->
-        <ListView
-            android:id="@+id/listViewHistory"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="1dp"
-            android:layout_marginBottom="12dp" />
+                <RadioButton android:id="@+id/radio0" android:text="0%" />
+                <RadioButton android:id="@+id/radio1" android:text="1%" />
+                <RadioButton android:id="@+id/radio2" android:text="2%" />
+                <RadioButton android:id="@+id/radio3" android:text="3%" />
+                <RadioButton android:id="@+id/radio4" android:text="4%" />
+                <RadioButton android:id="@+id/radio5" android:text="5%" />
+            </RadioGroup>
 
-        <!-- About button -->
-        <Button
-            android:id="@+id/buttonAbout"
-            android:text="About This App"
-            android:backgroundTint="#9C27B0"
-            android:textColor="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp" />
-    </LinearLayout>
-</ScrollView>
+            <!-- Calculate -->
+            <Button
+                android:id="@+id/buttonCalculate"
+                android:text="Calculate"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Result Display -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <ImageView
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="#1565C0"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/textViewTotalCharges"
+                    android:text="Total Charges: -"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#212121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:tint="#1565C0"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/textViewFinalCost"
+                    android:text="Final Cost: -"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#212121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Save -->
+            <Button
+                android:id="@+id/buttonSave"
+                android:text="Save to Database"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <!-- View Monthly Bill -->
+            <Button
+                android:id="@+id/buttonViewBills"
+                android:text="View Monthly Bill"
+                android:backgroundTint="#009688"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
