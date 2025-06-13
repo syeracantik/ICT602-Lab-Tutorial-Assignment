@@ -26,7 +26,7 @@ public class MonthlyBillActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Monthly Bill History");
+            getSupportActionBar().setTitle("📅 Monthly Bills");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Optional back arrow
         }
 

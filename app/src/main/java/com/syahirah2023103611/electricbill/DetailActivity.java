@@ -18,7 +18,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Bill Details");
+        getSupportActionBar().setTitle("📊 Bill Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         textViewMonth = findViewById(R.id.textViewMonth);
         textViewUnit = findViewById(R.id.textViewUnit);
@@ -46,5 +47,10 @@ public class DetailActivity extends AppCompatActivity {
             Toast.makeText(this, "No ID passed", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

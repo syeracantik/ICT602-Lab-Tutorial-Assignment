@@ -22,7 +22,8 @@ public class AboutActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("About This App");
+        getSupportActionBar().setTitle("👩‍💻 About This App");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         imageProfile = findViewById(R.id.imageProfile);
         textName = findViewById(R.id.textViewName);
@@ -39,5 +40,10 @@ public class AboutActivity extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intent);
         });
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

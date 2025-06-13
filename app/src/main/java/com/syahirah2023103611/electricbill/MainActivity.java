@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_info);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Electricity Bill Calculator");
+        getSupportActionBar().setTitle("⚡ Electricity Bill Calculator ⚡");
         toolbar.setNavigationOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
