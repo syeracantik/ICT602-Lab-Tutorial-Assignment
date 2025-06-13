@@ -1,4 +1,4 @@
-// ✅ MainActivity.java — With Toolbar, Monthly Bill Button, and Clean Layout
+
 package com.syahirah2023103611.electricbill;
 
 import android.content.Intent;
@@ -28,11 +28,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Setup Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_info);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Electricity Bill Calculator");
-        toolbar.setNavigationIcon(R.drawable.ic_info); // make sure ic_info exists in drawable
         toolbar.setNavigationOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);

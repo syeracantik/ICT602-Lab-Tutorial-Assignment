@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -18,7 +19,10 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        setTitle("About");
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("About This App");
 
         imageProfile = findViewById(R.id.imageProfile);
         textName = findViewById(R.id.textViewName);
@@ -27,10 +31,11 @@ public class AboutActivity extends AppCompatActivity {
         textCopyright = findViewById(R.id.textViewCopyright);
         buttonGitHub = findViewById(R.id.buttonGitHub);
 
-        imageProfile.setImageResource(R.drawable.syahirah_photo); // Pastikan image ini wujud di drawable
+        imageProfile.setImageResource(R.drawable.syahirah_photo); // make sure file exists
 
+        // 🔹 GitHub Link Action
         buttonGitHub.setOnClickListener(v -> {
-            String url = "https://github.com/syahirahnabihah/electricity-bill-app";
+            String url = "https://github.com/syeracantik/ICT602-Lab-Tutorial-Assignment";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intent);
         });

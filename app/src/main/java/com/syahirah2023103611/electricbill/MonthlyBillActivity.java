@@ -2,9 +2,10 @@ package com.syahirah2023103611.electricbill;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,14 +21,24 @@ public class MonthlyBillActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monthly_bill);
-        setTitle("Monthly Bill History");
 
+        // ✅ Toolbar Setup
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Monthly Bill History");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Optional back arrow
+        }
+
+        // ✅ Component setup
         listViewHistory = findViewById(R.id.listViewHistory);
         buttonClearAll = findViewById(R.id.buttonClearAll);
         dbHelper = new DatabaseHelper(this);
 
+        // ✅ Load data
         loadBillList();
 
+        // ✅ Item click to DetailActivity
         listViewHistory.setOnItemClickListener((parent, view, position, id) -> {
             HashMap<String, String> selectedItem = billList.get(position);
             String selectedId = selectedItem.get("id");
@@ -37,6 +48,7 @@ public class MonthlyBillActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // ✅ Delete all records
         buttonClearAll.setOnClickListener(v -> {
             dbHelper.deleteAllBills();
             Toast.makeText(this, "All records cleared!", Toast.LENGTH_SHORT).show();
@@ -54,5 +66,12 @@ public class MonthlyBillActivity extends AppCompatActivity {
                 new int[]{android.R.id.text1, android.R.id.text2}
         );
         listViewHistory.setAdapter(adapter);
+    }
+
+    // ✅ Handle back arrow
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
